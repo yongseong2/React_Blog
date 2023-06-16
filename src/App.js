@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import React from 'react';
 
@@ -6,33 +6,51 @@ import React from 'react';
 function App() {
 
   // const [글제목들, set글제목들] = useState(['남자코트 추천', '강남 우동 맛집', '리액트 기초 배우기'])
-  const [따봉, set따봉] = useState([0, 0, 0]) ;
+  const [따봉, set따봉] = useState([]) ;
   const [modal, setModal] = useState(false)
   const [articleIndex, setArticleIndex] = useState(0)
   const [input, setInput] = useState('')
   // const [date, setDate] = useState(['2023/05/13 17:22', '2022/9/28 17:22', '2023/12/22 17:22'])
   const [articles, setArticles] = useState(
     [
-      {
-        title : '남자코트 추천',
-        date : '2023/05/13 17:22'
-      },
-      {
-        title : '강남 우동 맛집',
-        date : '2022/9/28 17:22'
-      },
-      {
-        title : '리액트 기초 배우기',
-        date : '2023/12/22 17:22'
-      }
+      // {
+      //   title : '남자코트 추천',
+      //   date : '2023/05/13 17:22'
+      // },
+      // {
+      //   title : '강남 우동 맛집',
+      //   date : '2022/9/28 17:22'
+      // },
+      // {
+      //   title : '리액트 기초 배우기',
+      //   date : '2023/12/22 17:22'
+      // }
     ]
   )
+
+  useEffect(() => {
+    const savedArticles = localStorage.getItem('articles');
+    const savedLikes = localStorage.getItem('likes');
+    if (savedArticles) {
+      setArticles(JSON.parse(savedArticles));
+    }
+    if (savedLikes) {
+      set따봉(JSON.parse(savedLikes));
+    }
+  }, []);
+
+  // 게시글과 따봉 Local Storage에 저장하기
+  useEffect(() => {
+    localStorage.setItem('articles', JSON.stringify(articles));
+    localStorage.setItem('likes', JSON.stringify(따봉));
+  }, [articles, 따봉]);
 
   function like(idx) {
     const copy = [...따봉]
     copy[idx] += 1
     set따봉( copy )
   }
+
   // function changeName() {
   //   console.log(articles)
   //   const copy = [...articles]
