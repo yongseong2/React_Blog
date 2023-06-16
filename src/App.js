@@ -94,6 +94,10 @@ function App() {
                 const copy = [...articles]
                 copy.splice(idx, 1)
                 setArticles(copy)
+
+                const copyLikes = [...따봉]
+                copyLikes.splice(idx, 1)
+                set따봉(copyLikes)
               }}>삭제</button>
             </div>
           )
