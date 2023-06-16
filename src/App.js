@@ -69,11 +69,15 @@ function App() {
   return (
     <div className="App">
       <div className='black-nav'>
-        <h4>HI 난 성용이야</h4>
+        <h4>HI 난 메모장이야</h4>
       </div>
 
       <div>
-        <h4> 하고 싶은 말을 적어 </h4>
+        <h4> 여기다 메모를 적으세요
+          <br />
+          (주의)사라져도 책임 안짐ㅋㅋ
+          
+          </h4>
       </div>
 
       {/* <button onClick={ sortArrary }>가나다라정렬</button> */}
