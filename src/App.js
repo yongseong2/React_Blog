@@ -136,9 +136,13 @@ function App() {
 
 function Modal(props) {
 
+  
   const articles = props.articles[props.articleIndex]
   
-
+  if (articles.length === 0) {
+    return null
+  }
+  
   return (
     <div className='modal'>
       <h4>{articles.title }</h4>
