@@ -69,7 +69,11 @@ function App() {
   return (
     <div className="App">
       <div className='black-nav'>
-        <h4>React Blog</h4>
+        <h4>HI 난 성용이야</h4>
+      </div>
+
+      <div>
+        <h4> 하고 싶은 말을 적어 </h4>
       </div>
 
       {/* <button onClick={ sortArrary }>가나다라정렬</button> */}
