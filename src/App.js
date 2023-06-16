@@ -33,12 +33,12 @@ function App() {
     copy[idx] += 1
     set따봉( copy )
   }
-  function changeName() {
-    // console.log(articles)
-    const copy = [...articles]
-    copy[0].title = '여자코트 추천'
-    setArticles(copy)
-  }
+  // function changeName() {
+  //   console.log(articles)
+  //   const copy = [...articles]
+  //   copy[0].title = '여자코트 추천'
+  //   setArticles(copy)
+  // }
   // function sortArrary() {
   //   let copy = [...articles]
   //   copy.sort()
@@ -56,7 +56,7 @@ function App() {
 
       {/* <button onClick={ sortArrary }>가나다라정렬</button> */}
 
-      <button onClick={ changeName }> 글 수정</button>
+      {/* <button onClick={ changeName }> 글 수정</button> */}
 
       {
         articles.map((article, idx)=> {
@@ -85,7 +85,7 @@ function App() {
         modal === true ? 
         <Modal 
         articles={articles}
-        changeName={changeName}
+        // changeName={changeName}
         articleIndex={articleIndex}
         /> : null
       }
@@ -148,7 +148,7 @@ function Modal(props) {
       <h4>{articles.title }</h4>
       <p> {articles.date} </p>
       <p>상세내용</p>
-      <button onClick={()=> { props.changeName() }}>글 수정</button>
+      {/* <button onClick={()=> { props.changeName() }}>글 수정</button> */}
     </div>
   )
 }
